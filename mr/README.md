@@ -36,7 +36,7 @@ The next step is to create a new **Class** for each class you want to develop.
 
 At this point you should have a java project named mapred-lab already configured that compiles. The next step is starting with the first exercise.
 
-## How to launch the jobs <a id="runjob"></a>
+## How to launch a job
 In order to launch a job, you need first to export a **JAR** file. Therefore, from Eclipse:
 - Select the menu item **File > Export**
 - Type **JAR**, select **JAR file** and click on **Next**
@@ -97,7 +97,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`, which contains an extract of the English books from Project Gutenberg http://www.gutenberg.org/, which provides a collection of full texts of public domain books.
 
-Note: in order to launch the job, refer to [How to launch the jobs](#runjob)
+Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
 
 ### Questions ###
 
@@ -140,7 +140,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`.
 
-Note: in order to launch the job, refer to [How to launch the jobs](#runjob)
+Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
 
 #### Questions
 Answer the following questions (in a simple text file):
@@ -171,7 +171,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`.
 
-Note: in order to launch the job, refer to [How to launch the jobs](#runjob)
+Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
 
 #### Questions
 Answer the following questions (in a simple text file):
@@ -182,7 +182,7 @@ Answer the following questions (in a simple text file):
 + Using the [Jobtracker Web Interface](#webui), compare the shuffle phase of *Pair* and *Stripes*.
 + Why `StringToIntMapWritable` is not Comparable (differently from `TextPair`)?
 
-Note: in order to launch the job, refer to [How to launch the jobs](#runjob)
+Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
 
 <!-- ## EXERCISE 4:: Order Inversion (Design Pattern) -->
 ## EXERCISE 4:: Relative term co-occurrence and Order Inversion Design Pattern
@@ -202,7 +202,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`.
 
-Note: in order to launch the job, refer to [How to launch the jobs](#runjob)
+Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
 
 ### Questions ###
 Answer the following questions. In answering the questions below, consider the role of the combiner.
