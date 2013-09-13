@@ -1,6 +1,6 @@
 # MapReduce Laboratory
 
-In this laboratory students will learn how to use the [hadoop][hadoop] client API by working on a series of exercises:
+In this laboratory students will learn how to use the [Hadoop][hadoop] client API by working on a series of exercises:
 
 + The classic Word Count and variations on the theme
 + Design Pattern: Pair and Stripes
@@ -9,7 +9,7 @@ In this laboratory students will learn how to use the [hadoop][hadoop] client AP
 
 Note that the two design patterns outlined above have been originally discussed in:
 
-+ Jimmy Lin, Chris Dyer, **Data-Intensive Text Processing with MapReduce**, Morgan Claypool ed. [link][link]
++ Jimmy Lin, Chris Dyer, **Data-Intensive Text Processing with MapReduce**, Morgan Claypool ed. [link][jimmilin]
 
 [hadoop]: http://hadoop.apache.org "hadoop"
 [jimmilin]: http://lintool.github.io/MapReduceAlgorithms/index.html
@@ -36,7 +36,7 @@ The next step is to create a new **Class** for each class you want to develop.
 
 At this point you should have a java project named mapred-lab already configured that compiles. The next step is starting with the first exercise.
 
-## How to launch the jobs: <a id="runjob"></a>
+## How to launch the jobs <a id="runjob"></a>
 In order to launch a job, you need first to export a **JAR** file. Therefore, from Eclipse:
 - Select the menu item **File > Export**
 - Type **JAR**, select "**JAR file** and click on **Next**
@@ -44,8 +44,13 @@ In order to launch a job, you need first to export a **JAR** file. Therefore, fr
 - Type **Finish**
 
 Once you have exported your jar file, you can run your code using the local version of Hadoop.
-Open a *terminal*, and type `hadoop jar <jarname.jar> <fully.qualified.class.Name> <Parameters>`.
-For example, for running the *WordCount* example, type `hadoop jar mrlab.jar fr.eurecom.dsg.mapreduce.WordCount 2 INPUT/text/quote.txt OUTPUT/wordcount/`.
+Open a *terminal*, and type:
+```
+hadoop jar <jarname.jar> <fully.qualified.class.Name> <Parameters>```
+
+For example, for running the *WordCount* exercise, type:
+```
+hadoop jar mrlab.jar fr.eurecom.dsg.mapreduce.WordCount 2 INPUT/text/quote.txt OUTPUT/wordcount/```
 
 Note that you need to specify a *non existing* output directory, or to delete it before running the job.
 
@@ -100,11 +105,12 @@ Answer the following questions (in a simple text file):
 + Use the JobTracker web interface to examinate the job counters: can you explain the differences among all the implementations? For example, look at the amount of bytes shuffled by Hadoop
 
 > Zipf's law states that given some corpus of natural language utterances, the frequency of any word is inversely proportional to its rank in the frequency table. Thus the most frequent word will occur approximately twice as often as the second most frequent word, three times as often as the third most frequent word, etc. For example, in the *Brown Corpus of American English* text, the word "*the*" is the most frequently occurring word, and by itself accounts for nearly 7% of all word occurrences. The second-place word "*of*" accounts for slightly over 3.5% of words, followed by "*and*". Only 135 vocabulary items are needed to account for half the Brown Corpus. (wikipedia.org)
+
 + Can you explain how does the distribution of words affect the WordCount? In particular, think to the reducers.
 
 ## EXERCISE 2:: Term co-occurrences
 In the following exercise, we need to build the term co-occurrence matrix for a text collection.
-A co-occurrence matrix is a n x n matrix, where n is the number of unique words in the text. For each couple of words, we count the number of times they co-occurred in the text in the same line. 
+A co-occurrence matrix is a n x n matrix, where n is the number of unique words in the text. For each couple of words, we count the number of times they co-occurred in the text in the same line.
 
 ### Pairs Design Pattern
 
@@ -213,7 +219,7 @@ In MapReduce the term join refers to merging two different dataset stored as uns
 ### Jobs
 
 + **Distributed Cache Join**: implement word count using the distributed cache to exclude some words. The file in the HDFS `/user/student/INPUT/text/english.stop` contains the list of the words to exclude.
-+ **Reduce Side Join**: You need to find the two-hops friends, i.e. the friends of friends of each user, in the twitter dataset. In particular, you need to implement a self-join, that is a join between two instances of the same dataset, on the twitter graph. To test your code use the file `/user/student/INPUT/twitter/twitter-small.txt`, saved in the local HDFS fs. To run the final version of your job, you can use a bigger file, `/user/student/INPUT/twitter/twitter-big-sample.txt`. Both files contain lines in the form _userid_ _friendid_. 
++ **Reduce Side Join**: You need to find the two-hops friends, i.e. the friends of friends of each user, in the twitter dataset. In particular, you need to implement a self-join, that is a join between two instances of the same dataset, on the twitter graph. To test your code use the file `/user/student/INPUT/twitter/twitter-small.txt`, saved in the local HDFS fs. To run the final version of your job, you can use a bigger file, `/user/student/INPUT/twitter/twitter-big-sample.txt`. Both files contain lines in the form _userid_ _friendid_.
 
 ### Instructions
 
