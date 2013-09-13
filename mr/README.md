@@ -153,15 +153,15 @@ Answer the following questions (in a simple text file):
 ### Stripes Design Pattern
 This approach is similar to the previous one: for each line, co-occurring pairs are generated. However, now, instead of emitting every pair as soon as it is generated, intermediate results are stored in an associative array. We use an associative array, and, for each word, we emit the word itself as key and a *Stripe*, that is the map of co-occurring words with the number of associated occurrence.
 
-For example, in the line `w1 w2 w3 w1`, we emit
+For example, in the line `w1 w2 w3 w1`, we emit:
 ```
 w1:{w2:1, w3:1}, w2:{w1:2,w3:1}, w3:{w1:2, w2:1}, w1:{w2:1, w3:1}
 ```
 
-Note that, instead, we could emit also
+Note that, instead, we could emit also:
 ```
 w1:{w2:2, w3:2}, w2:{w1:2,w3:1}, w3:{w1:2, w2:1}
-```.
+```
 
 In this exercise the student will understand how to create a custom Hadoop data type to be used as value type.
 
