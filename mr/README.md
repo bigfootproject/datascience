@@ -194,7 +194,7 @@ Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-
 
 <!-- ## EXERCISE 4:: Order Inversion (Design Pattern) -->
 ## EXERCISE 4:: Relative term co-occurrence and Order Inversion Design Pattern
-In this example we need to compute the co-occurrence matrix, like the one in the previous exercise, but using the relative frequencies of each pair, instead of the absolute value. Pratically, we need to count the number of times each pair *(w<sub>i</sub>, w_j)* occurs divided by the number of total pairs with *w_i* (marginal).
+In this example we need to compute the co-occurrence matrix, like the one in the previous exercise, but using the relative frequencies of each pair, instead of the absolute value. Pratically, we need to count the number of times each pair *(w<sub>i</sub>, w<sub>j</sub>)* occurs divided by the number of total pairs with *w<sub>i</sub>* (marginal).
 
 The student has to implement the `Map` and `Reduce` methods and the special partitioner (see `OrderInversion#PartitionerTextPair` class), which apply the partitioner only according to the first element in the Pair, sending all data regarding the same word to the same reducer. Note that inside the `OrderInversion` class there is a field called `ASTERISK` which should be used to output the total number of occourrences of a word. Refer to the laboratory slides for more information.
 
