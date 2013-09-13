@@ -158,7 +158,7 @@ How-to inspect your results and check your job in the cluster
 5. How many reducers were launched? Why? Can you modify this number?
 6. How many mappers were launched? Why? Can you modify this number?
 
-## Exercise 2:
+## Exercise 2
 **Problem statement:** count the total number of TCP connection having “google.it” in the FQDN (Fully Qualified Domain Name) field (field #113 in the tstat data).
 
 **Hint:** You need to modify the code of the previous exercise, filtering the loaded data, and applying a different grouping.
@@ -167,11 +167,11 @@ How-to inspect your results and check your job in the cluster
 **Questions:**
 1. How many reducers were launched? Can you increase the number of reducers?
 
-## Exercise 3:
+## Exercise 3
 **Problem statement:**  for each client IP, compute the sum of uploaded, downloaded and total (up+down) transmitted bytes.
 
 
-## Exercise 4:
+## Exercise 4
 **Problem statement: find the top 100 users per uploaded bytes.**
 
 
@@ -185,7 +185,7 @@ How-to inspect your results and check your job in the cluster
 4. **TOP** function was introduced in PIG v.0.8. How, in your opinion, and based on your understanding of PIG, was the query answered before the TOP command was available? Do you think that it was less efficient than the current implementation?
 
 
-## Exercise 5:
+## Exercise 5
 **Problem statement:** For each IP in the top 100 list previously computed, find the number of bytes uploaded by the largest TCP connection and the percentage of the bytes uploaded by this connection over the total number of uploaded bytes.
 
 
@@ -196,7 +196,7 @@ How-to inspect your results and check your job in the cluster
 1. How many jobs were generated?
 2. Describe how the join is executed.
 
-## Exercise :6
+## Exercise 6
 **Problem statement:** find the minimum value of client MSS (mss_c).
 
 
@@ -205,7 +205,7 @@ How-to inspect your results and check your job in the cluster
 2. What did you learn from this exercise?
 
 
-## Exercise 7:
+## Exercise 7
 **Problem statement:** find the percentage of TCP connections with minimum client window (win_min_c) == 1460 over the total number of connections.
 
 **Questions:**
@@ -215,7 +215,7 @@ How-to inspect your results and check your job in the cluster
 
 
 
-## Exercise 8:
+## Exercise 8
 **Problem statement:** calculate the percentage of bytes received by each distinct server port over the total number of bytes received by all the server ports.
 
 **Questions:**
@@ -223,7 +223,7 @@ How-to inspect your results and check your job in the cluster
 2. If you run the exercise on a large cluster, using the same dataset, would you use a different value of parallelism?
 
 
-## Exercise 9:
+## Exercise 9
 **Problem statement:** Find the percentage of flows directed to port 80 over the total number of flows.
 
 
@@ -237,7 +237,7 @@ How-to inspect your results and check your job in the cluster
 
 
 
-## Exercise 1/b:
+## Exercise 1/b
 **Problem statement:** count the number of TCP connection per each client IP.
 
 
