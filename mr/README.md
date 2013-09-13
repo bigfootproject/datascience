@@ -97,7 +97,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`, which contains an extract of the English books from Project Gutenberg http://www.gutenberg.org/, which provides a collection of full texts of public domain books.
 
-Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
+Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
 ### Questions ###
 
