@@ -39,18 +39,20 @@ At this point you should have a java project named mapred-lab already configured
 ## How to launch the jobs <a id="runjob"></a>
 In order to launch a job, you need first to export a **JAR** file. Therefore, from Eclipse:
 - Select the menu item **File > Export**
-- Type **JAR**, select "**JAR file** and click on **Next**
-- In the textbox **Select the export destination:", type the name of the new **JAR** you want to export, i.e. '/home/student/mrlab.jar'
+- Type **JAR**, select **JAR file** and click on **Next**
+- In the textbox **Select the export destination**, type the name of the new **JAR** you want to export, i.e. *'/home/student/mrlab.jar'*
 - Type **Finish**
 
 Once you have exported your jar file, you can run your code using the local version of Hadoop.
 Open a *terminal*, and type:
 ```
-hadoop jar <jarname.jar> <fully.qualified.class.Name> <Parameters>```
+hadoop jar <jarname.jar> <fully.qualified.class.Name> <Parameters>
+```
 
 For example, for running the *WordCount* exercise, type:
 ```
-hadoop jar mrlab.jar fr.eurecom.dsg.mapreduce.WordCount 2 INPUT/text/quote.txt OUTPUT/wordcount/```
+hadoop jar mrlab.jar fr.eurecom.dsg.mapreduce.WordCount 2 INPUT/text/quote.txt OUTPUT/wordcount/
+```
 
 Note that you need to specify a *non existing* output directory, or to delete it before running the job.
 
