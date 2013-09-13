@@ -80,7 +80,7 @@ Count the occurrences of each word in a text file. This is the simplest example 
 
 For the **basic** version the student has to modify the file *WordCount.java* in the package *fr.eurecom.dsg.mapreduce*. The user must operate on each TODO filling the gaps with code, following the description associated to each TODO. The package *java.util* contains a class *StringTokenizer* that can be used to tokenize the text.
 
-For The **In-Memory** Combiner and the **Combiner** the student has to modify *WordCountIMC.java* and *WordCountCombiner.java* in the same package referenced aboce. The student has to operate on each TODO using the same code of the basic word count example except for the TODOs marked with a star *. Those must be completed with using the appropriate design pattern.
+For the **In-Memory** Combiner and the **Combiner** the student has to modify *WordCountIMC.java* and *WordCountCombiner.java* in the same package referenced aboce. The student has to operate on each TODO using the same code of the basic word count example except for the TODOs marked with a star *. Those must be completed with using the appropriate design pattern.
 
 When an execise is completed you can export it into a jar file that will then be used to execute it.
 
@@ -147,13 +147,21 @@ Answer the following questions (in a simple text file):
 
 + How does the number of reducer influence the behavior of the Pairs approach?
 + Why does `TextPair` need to be Comparable?
++ Can you use the implemented reducers as *Combiner*?
 
 
 ### Stripes Design Pattern
 This approach is similar to the previous one: for each line, co-occurring pairs are generated. However, now, instead of emitting every pair as soon as it is generated, intermediate results are stored in an associative array. We use an associative array, and, for each word, we emit the word itself as key and a *Stripe*, that is the map of co-occurring words with the number of associated occurrence.
 
-For example, in the line `w1 w2 w3 w1`, we emit `w1:{w2:1, w3:1}, w2:{w1:2,w3:1}, w3:{w1:2, w2:1}, w1:{w2:1, w3:1}`.
-Note that, instead, we could emit also `w1:{w2:2, w3:2}, w2:{w1:2,w3:1}, w3:{w1:2, w2:1}`.
+For example, in the line `w1 w2 w3 w1`, we emit
+```
+w1:{w2:1, w3:1}, w2:{w1:2,w3:1}, w3:{w1:2, w2:1}, w1:{w2:1, w3:1}
+```
+
+Note that, instead, we could emit also
+```
+w1:{w2:2, w3:2}, w2:{w1:2,w3:1}, w3:{w1:2, w2:1}
+```.
 
 In this exercise the student will understand how to create a custom Hadoop data type to be used as value type.
 
@@ -179,14 +187,14 @@ Answer the following questions (in a simple text file):
 + Can you use the implemented reducers as *Combiner*?
 + Do you think Stripes could be used with the in-memory combiner pattern?
 + How does the number of reducer influence the behavior of the Stripes approach?
-+ Using the [Jobtracker Web Interface](#web-interfaces-monitor-job-progress-), compare the shuffle phase of *Pair* and *Stripes*.
++ Using the [Jobtracker Web Interface](#web-interfaces-monitor-job-progress), compare the shuffle phase of *Pair* and *Stripes*.
 + Why `StringToIntMapWritable` is not Comparable (differently from `TextPair`)?
 
 Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
 <!-- ## EXERCISE 4:: Order Inversion (Design Pattern) -->
 ## EXERCISE 4:: Relative term co-occurrence and Order Inversion Design Pattern
-In this example we need to compute the co-occurrence matrix, like the one in the previous exercise, but using the relative frequencies of each pair, instead of the absolute value. Pratically, we need to count the number of times each pair *(w_i, w_j)* occurs divided by the number of total pairs with *w_i* (marginal).
+In this example we need to compute the co-occurrence matrix, like the one in the previous exercise, but using the relative frequencies of each pair, instead of the absolute value. Pratically, we need to count the number of times each pair *(w<sub>i</sub>, w_j)* occurs divided by the number of total pairs with *w_i* (marginal).
 
 The student has to implement the `Map` and `Reduce` methods and the special partitioner (see `OrderInversion#PartitionerTextPair` class), which apply the partitioner only according to the first element in the Pair, sending all data regarding the same word to the same reducer. Note that inside the `OrderInversion` class there is a field called `ASTERISK` which should be used to output the total number of occourrences of a word. Refer to the laboratory slides for more information.
 
