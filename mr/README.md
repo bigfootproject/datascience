@@ -56,7 +56,7 @@ hadoop jar mrlab.jar fr.eurecom.dsg.mapreduce.WordCount 2 INPUT/text/quote.txt O
 
 Note that you need to specify a *non existing* output directory, or to delete it before running the job.
 
-## Web interfaces: monitor job progress <a id="webui"></a>:
+## Web interfaces: monitor job progress
 
 Hadoop publishes some web interfaces that display JobTracker and HDFS statuses.
 You can access them using the following links:
@@ -140,7 +140,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`.
 
-Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
+Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
 #### Questions
 Answer the following questions (in a simple text file):
@@ -171,7 +171,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`.
 
-Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
+Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
 #### Questions
 Answer the following questions (in a simple text file):
@@ -179,10 +179,10 @@ Answer the following questions (in a simple text file):
 + Can you use the implemented reducers as *Combiner*?
 + Do you think Stripes could be used with the in-memory combiner pattern?
 + How does the number of reducer influence the behavior of the Stripes approach?
-+ Using the [Jobtracker Web Interface](#webui), compare the shuffle phase of *Pair* and *Stripes*.
++ Using the [Jobtracker Web Interface](#web-interfaces-monitor-job-progress-), compare the shuffle phase of *Pair* and *Stripes*.
 + Why `StringToIntMapWritable` is not Comparable (differently from `TextPair`)?
 
-Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
+Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
 <!-- ## EXERCISE 4:: Order Inversion (Design Pattern) -->
 ## EXERCISE 4:: Relative term co-occurrence and Order Inversion Design Pattern
@@ -202,7 +202,7 @@ To test your code use the file `/user/student/INPUT/text/quote.txt`, saved in th
 
 To run the final version of your job, you can use a bigger file, `/user/student/INPUT/text/gutenberg-partial.txt`.
 
-Note: in order to launch the job, refer to [How to launch a job](#How-to-launch-a-job)
+Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
 ### Questions ###
 Answer the following questions. In answering the questions below, consider the role of the combiner.
