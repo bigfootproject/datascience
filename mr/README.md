@@ -229,7 +229,7 @@ In MapReduce the term join refers to merging two different dataset stored as uns
 ### Jobs
 
 + **Distributed Cache Join**: implement word count using the distributed cache to exclude some words. The file in the HDFS `/user/student/INPUT/text/english.stop` contains the list of the words to exclude.
-+ **Reduce Side Join**: You need to find the two-hops friends, i.e. the friends of friends of each user, in the twitter dataset. In particular, you need to implement a self-join, that is a join between two instances of the same dataset, on the twitter graph. To test your code use the file `/user/student/INPUT/twitter/twitter-small.txt`, saved in the local HDFS fs. To run the final version of your job, you can use a bigger file, `/user/student/INPUT/twitter/twitter-big-sample.txt`. Both files contain lines in the form _userid_ _friendid_.
++ **Reduce Side Join**: You need to find the two-hops friends, i.e. the friends of friends of each user, in the twitter dataset. In particular, you need to implement a self-join, that is a join between two instances of the same dataset, on the twitter graph. To test your code use the file `/user/student/INPUT/twitter/twitter-small.txt`, saved in the local HDFS fs. To run the final version of your job, you can use a bigger file, `/user/student/INPUT/twitter/twitter-big-sample.txt`. Both files contain lines in the form `userid friendid`.
 
 ### Instructions
 
