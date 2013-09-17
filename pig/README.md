@@ -172,7 +172,7 @@ How-to inspect your results and check your job in the cluster
 
 
 ## Exercise 4
-**Problem statement: find the top 100 users per uploaded bytes.**
+**Problem statement:** find the top 100 users per uploaded bytes.
 
 
 **Hint:** there are different ways of solving this exercise, in particular, in recent PIG versions there is a function called TOP, that returns the top-n tuples from a bag of tuples (see http://pig.apache.org/docs/r0.11.1/func.html#topx).
