@@ -18,7 +18,7 @@ Note that the two design patterns outlined above have been originally discussed 
 
 The first step is to create a new Java Project in Eclipse:
 
-- Inside Eclipse select the menu item **File > New > Project ...*** to open the **New Project** wizard.
+- Inside Eclipse select the menu item **File > New > Project ...** to open the **New Project** wizard.
 - Select **Java Project** then click **Next** to start the **New Java Project**
 - Type a name for your new project, such as ''mr-lab''
 - Ensure to use *JavaSE-1.6* as JRE, then click on **Next**
@@ -31,10 +31,16 @@ The first step is to create a new Java Project in Eclipse:
 
 Now you have a new project.
 
-The next step is to create a new **Class** for each class you want to develop.
-- Inside Eclipse select the menu item **File > New > Class**
+The next step is to import the source files to complete in the Project.
+- Inside Eclipse, select the **src** directory in your project.
+- Right-click on the src directory and select **Import**
+- Select **File System** then click **Next**
+- In **From Directory**,  select *./mr/src/fr*, which is inside the directory where you cloned the git repository
+- In the tree on the left, select *fr*, then click **Finish**.
 
-At this point you should have a java project named mapred-lab already configured that compiles. The next step is starting with the first exercise.
+At this point you should have a java project named mapred-lab already configured.
+The next step is starting with the first exercise.
+Note that there can be errors in the source code you imported. This is normal, since there are incompleted source files that will be corrected in the exercises.
 
 ## How to launch a job
 In order to launch a job, you need first to export a **JAR** file. Therefore, from Eclipse:
@@ -192,8 +198,7 @@ Answer the following questions (in a simple text file):
 
 Note: in order to launch the job, refer to [How to launch a job](#how-to-launch-a-job)
 
-<!-- ## EXERCISE 4:: Order Inversion (Design Pattern) -->
-## EXERCISE 4:: Relative term co-occurrence and Order Inversion Design Pattern
+## EXERCISE 3:: Relative term co-occurrence and Order Inversion Design Pattern
 In this example we need to compute the co-occurrence matrix, like the one in the previous exercise, but using the relative frequencies of each pair, instead of the absolute value. Pratically, we need to count the number of times each pair *(w<sub>i</sub>, w<sub>j</sub>)* occurs divided by the number of total pairs with *w<sub>i</sub>* (marginal).
 
 The student has to implement the `Map` and `Reduce` methods and the special partitioner (see `OrderInversion#PartitionerTextPair` class), which apply the partitioner only according to the first element in the Pair, sending all data regarding the same word to the same reducer. Note that inside the `OrderInversion` class there is a field called `ASTERISK` which should be used to output the total number of occourrences of a word. Refer to the laboratory slides for more information.
@@ -220,7 +225,7 @@ Answer the following questions. In answering the questions below, consider the r
 + How does the default partitioner works with `TextPair`? Can you imagine a different implementation that does not change the Partitioner?
 + For each key, the reducer receives its marginal before the co-occurence with the other words. Why?
 
-## EXERCISE 5:: Joins
+## EXERCISE 4:: Joins
 In MapReduce the term join refers to merging two different dataset stored as unstructured files in HDFS. As for databases, in MapReduce there are many different kind of joins, each with its use-cases and constraints. In this laboratory the student will implement two different kinds of MapReduce join techniques:
 
 + **Distributed Cache Join**: this join technique is used when one of the two files to join is small enough to fit (eventually in memory) on each computer of the cluster. This file is copied locally to each computer using the Hadoop distributed cache and then loaded by the map phase.
