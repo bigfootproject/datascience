@@ -238,7 +238,7 @@ How-to inspect your results and check your job in the cluster
 
 
 ## Exercise 1/b
-**Problem statement:** count the number of TCP connection per each client IP.
+**Problem statement:** count the number of TCP connection per each IP.
 
 
 **Hint:** each TCP connection has a client IP and a server IP. For this exercise you need to count the number of connection per each IP, irrespective if client or server IP.
